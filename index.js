@@ -53,7 +53,6 @@ app.get("/usuarios/:id", (req, res) => {
             return console.error("Erro ao executar a qry de SELECT id", err);
           }
           res.send(result.rows);
-          //console.log(result);
         }
       );
     } catch (error) {
