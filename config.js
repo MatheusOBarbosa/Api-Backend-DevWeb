@@ -4,10 +4,10 @@ dotenv.config();
 
 const {
     PORT,
-    pgConection
+    pgConnection
 } = process.env;
 
 module.exports = {
     port: PORT,
-    urlConnection: pgConection
+    urlConnection: pgConnection
 }
