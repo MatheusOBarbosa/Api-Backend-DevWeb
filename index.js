@@ -91,7 +91,7 @@ app.post("/usuarios", (req, res) => {
       console.log("Chamou post", req.body);
       const { nome, email, senha } = req.body;
       client.query(
-        "INSERT INTO Usuarios (nome, email, senha) VALUES ($1, $2) RETURNING * ",
+        "INSERT INTO Usuarios (nome, email, senha) VALUES ($1, $2, $3) RETURNING * ",
         [nome, email, senha],
         function (err, result) {
           if (err) {
@@ -114,7 +114,7 @@ app.put("/usuarios/:id", (req, res) => {
       const id = req.params.id;
       const { nome, email, senha } = req.body;
       client.query(
-        "UPDATE Usuarios SET nome=$1, email=$2, senha=$3, WHERE id =$4 ",
+        "UPDATE Usuarios SET nome=$1, email=$2, senha=$3 WHERE id =$4 ",
         [nome, email, senha, id],
         function (err, result) {
           if (err) {
